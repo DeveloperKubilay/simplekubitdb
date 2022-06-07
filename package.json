@@ -1,0 +1,40 @@
+{
+  "name": "simplekubitdb",
+  "version": "1.0.0",
+  "description": "Both English and Turkish Database with its own extension! SimpleKubitDB",
+  "dependencies": {
+    "fs": "^0.0.2"
+  },
+  "keywords": [
+    "db",
+    "kubit.db",
+    "kubit-db",
+    "database",
+    "DataBase",
+    "kubitdb",
+    "kubit",
+    "jsondata",
+    "json",
+    ".kubitdb",
+    "kubitdbsimple",
+    "simplekubitdb",
+    "kubitdb-simple",
+    "simple-kubitdb",   
+    "databases",
+    "fs",
+    "türkçe",
+    "türkçe database",
+    "tr database",
+    "tr db",
+    "en db",
+    "kubitdblocal",
+    "simple databases",
+    "simple-database"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "types": "./index.ts",
+  "author": "@kubilaytr",
+  "license": "MIT"
+}
