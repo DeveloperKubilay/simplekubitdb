@@ -1,20 +1,19 @@
 // If you have got a problem go to discord.gg/4Xpwwz6pgN
-// Version: 1.0.0 Guarded by MIT LICENSE
+// Version: 1.0.2
 
-//First version created in 2 days so nice
-const fs = require('fs');//thx fs
+const fs = require('fs');
 class simplekubitdb {constructor(file) {
 this.dosya = file || 'database.kubitdb'
 if(!this.dosya.endsWith('.kubitdb')) this.dosya = this.dosya + '.kubitdb'
 if (!this.dosya.includes('./')) this.dosya = './' + this.dosya
-try{fs.readFile(this.dosya, 'utf-8')}catch{fs.appendFile(this.dosya, '', function (err) {})}}//Developed in 10 minutes because I'dont know
+try{fs.readFile(this.dosya, 'utf-8')}catch{fs.appendFile(this.dosya, '', function (err) {})}}
 
-set(aranacak, deger) {//Developed in 4 hours
+set(aranacak, deger) {
 if (!aranacak || !deger) return;
 fs.readFile(this.dosya, 'utf8', (err, b) => {
 if(!b.includes(aranacak+"=") && b === ""){
 if(deger.toString() === "[object Object]"){return fs.writeFileSync(this.dosya,aranacak+"="+JSON.stringify(deger, null, 0))}else{
-return fs.writeFileSync(this.dosya,aranacak+"="+deger)}}//wtf
+return fs.writeFileSync(this.dosya,aranacak+"="+deger)}}
 if(!b.includes(aranacak+"=")){
 if(deger.toString() === "[object Object]"){return fs.writeFileSync(this.dosya,b+"\n"+aranacak+"="+JSON.stringify(deger, null, 0))}else{
 return fs.writeFileSync(this.dosya,b+"\n"+aranacak+"="+deger)}} 
@@ -40,7 +39,7 @@ b.split("\n")[i].split("=")[1],aranacak+"="+JSON.stringify(deger, null, 0)))}els
 return fs.writeFileSync(this.dosya, b.replace(b.split("\n")[i].split("=")[0]+"="+b.split("\n")[i].split("=")[1],aranacak+"="+deger))}
 }}});return;}
 
-add(aranacak, deger) {//Developed in 1 hours
+add(aranacak, deger) {
 if (!aranacak || !deger) return;
 fs.readFile(this.dosya, 'utf8', (err, b) => {
 if(!b.includes(aranacak+"=") && b === "") return fs.writeFileSync(this.dosya,aranacak+"="+deger)
@@ -65,7 +64,7 @@ fs.writeFileSync(this.dosya, b.replace(b.split("\n")[i].split("=")[0]+"="+b.spli
 }}})
 return;}
 
-delete(aranacak, deger) {//Developed in 1.5 hours
+delete(aranacak, deger) {
 if (!aranacak) return;
 fs.readFile(this.dosya, 'utf8', (err, b) => {
 if(!b.includes(aranacak+"=") || b === "") return;
@@ -108,7 +107,7 @@ if(b.split("\n").length === i+1){return fs.writeFileSync(this.dosya, b.slice(0, 
 return fs.writeFileSync(this.dosya, b.replace(b.split("\n")[i],"").split("\n\n").join("\n"))
 }}}});return;}
 
-subtract(aranacak, deger) {//Developed in 1 minutes because db.add I am paste after copy .d
+subtract(aranacak, deger) {
 if (!aranacak || !deger) return;
 fs.readFile(this.dosya, 'utf8', (err, b) => {
 if(!b.includes(aranacak+"=") && b === "") return fs.writeFileSync(this.dosya,aranacak+"="+deger)
@@ -145,7 +144,7 @@ fs.writeFileSync(this.dosya, b.replace(b.split("\n")[i].split("=")[0]+"="+b.spli
 }}})
 return;}
 
-has(aranacak) {//Very simple
+has(aranacak) {
 if (!aranacak) return;
 var b = fs.readFileSync(this.dosya, 'utf-8')
 if(!b.includes(aranacak+"=")) return false;
@@ -158,13 +157,13 @@ if(!b.includes(aranacak+"=")) return false;
 if(b.includes(aranacak+"=")) return true;
 }
 
-all(){return fs.readFileSync(this.dosya, 'utf8')}//Developed in 2 minutes
+all(){return fs.readFileSync(this.dosya, 'utf8')}
 temizle(){fs.writeFileSync(this.dosya,"");return;}
 clear(){fs.writeFileSync(this.dosya,"");return;}
 deleteAll(){fs.writeFileSync(this.dosya,"");return;}
 clearAll(){fs.writeFileSync(this.dosya,"");return;}
 
-json() {//Oh, developed in 4.5 hours i not feel good push system not nice but this is so cool
+json() {
 var b = fs.readFileSync(this.dosya, 'utf-8')
 if(b === "") return "{}";
 for (let i = 0; i < b.split("\n").length; i++) {let yapılcak;
@@ -178,7 +177,7 @@ else{yapılcak = b.split("\n")[i].split("=")[1]+","} b = b.split(b.split("\n")[i
 return JSON.parse((`{"`+b.slice(0, -1)+`}`).split("\n").join(`\n"`).split("=").join(`":`))
 }
 
-push(aranacak, deger) {//Developed in 2.5 hours ;)
+push(aranacak, deger) {
 if (!aranacak || !deger) return;
 fs.readFile(this.dosya, 'utf8', (err, b) => {
 if(!b.includes(aranacak+"=") && b === ""){
@@ -269,12 +268,3 @@ return b.split("\n")[i].split("=")[1]
 }}}
 
 }module.exports = { simplekubitdb };
-/*/// The finish, Developed by kubi and thx reading code :)
-  ____                              _         ____  _             _ _       
- |  _ \  __ _ _ __   __ _  ___ _ __(_) ___   / ___|| |_ _   _  __| (_) ___  
- | | | |/ _` | '_ \ / _` |/ _ \ '__| |/ _ \  \___ \| __| | | |/ _` | |/ _ \ 
- | |_| | (_| | | | | (_| |  __/ |  | | (_) |  ___) | |_| |_| | (_| | | (_) |
- |____/ \__,_|_| |_|\__, |\___|_|  |_|\___/  |____/ \__|\__,_|\__,_|_|\___/ 
-                    |___/  
-
-*///                Discord:https://discord.gg/4Xpwwz6pgN
