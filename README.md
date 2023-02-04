@@ -1,5 +1,5 @@
 # SimpleKubitDB
-Version: **kubitdb@1.0.0**
+Version: **kubitdb@1.0.2**
 Module owner: **kubi#5443**
 The module has its own extension .kubitdb
 ## Info 
@@ -73,7 +73,7 @@ deneme=abc
 bread={1:"not",2:"not",3:"not"}
 /*/
 
-console.log(db.json())//You can convert it to json and use it. If you don't like simplekubitdb, you can convert it to json and use another database. you can use Örnek olarak kubitdb https://www.npmjs.com/package/kubitdb
+console.log(db.json())//You can convert it to json and use it. If you don't like simplekubitdb, you can convert it to json and use another database. you can use kubitdb https://www.npmjs.com/package/kubitdb 
 ```
 #### Are you using python, come to our [Discord](https://discord.gg/4Xpwwz6pgN) , let's put the python version or
 #### Do you need help why are you waiting go to [Discord](https://discord.gg/4Xpwwz6pgN) 

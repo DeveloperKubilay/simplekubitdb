@@ -1,6 +1,6 @@
 {
   "name": "simplekubitdb",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Both English and Turkish Database with its own extension! SimpleKubitDB",
   "dependencies": {
     "fs": "^0.0.2"
@@ -31,10 +31,11 @@
     "simple databases",
     "simple-database"
   ],
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "types": "./index.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DeveloperKubilay/simplekubitdb"
+  },
   "author": "@kubilaytr",
   "license": "MIT"
 }
