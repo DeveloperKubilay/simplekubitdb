@@ -1,91 +1,113 @@
-# SimpleKubitDB
-Version: **kubitdb@1.0.2**
-Module owner: **kubi#5443**
-The module has its own extension .kubitdb
-## Info 
-**Support:** [Support server](https://discord.gg/4Xpwwz6pgN) 
-### How to use
+## 🔥🔥🔥 SimpleKubitDB is a local database module 🎉  
+## It stores your data in `.kubitdb` files — smooth & simple 💾  
+
+---
+
+# 🚀 How to use SimpleKubitDB
+
 ```js
-const {simplekubitdb} = require('simplekubitdb')
-const db = new simplekubitdb("database")// you can change the name of the file to save,You can use const db = new kubitdb("./database.kubitdb") if you want
+const { simplekubitdb } = require('simplekubitdb')
+const db = new simplekubitdb("database") // you can change the filename
+// or use: const db = new kubitdb("./database.kubitdb") // if you want that cool extension 😎
+```
+## Set
+```js
+db.ayarla('test', 'enabled')
+db.set('test', 'true')
+```
+### output:
+```txt
+test = enabled
+```
 
-db.ayarla('deneme','açık')
-db.set('deneme','true')
-/*/
-deneme=açık
-/*/
+## Add
+```js
+db.ekle("money", 30)
+db.add("money", 30)
+```
+### output:
+```txt
+money = 30
+```
 
-db.ekle("para", 30)
-db.add("para", 30)
-/*/
-para=30
-/*/
-
+## Push
+```js
 db.push("serverSettings", Date.now())
 db.push("serverSettings", Date.now())
-/*/
-serverSettings=1653784957913||kubitdbpush||1653784960343
-/*/
+```
+### output:
+```txt
+serverSettings = 1653784957913||kubitdbpush||1653784960343
+```
 
+## Has
+```js
 db.varmı("prefix") 
 db.has("prefix") 
-/*/
-true
-false
-/*/
+```
+### output:
+```txt
+true / false
+```
 
-db.al("para")
-db.bak("para")
-db.get("para")
-db.fetch("para")
-/*/
+## Fetch/Get
+```js
+db.al("money")
+db.bak("money")
+db.get("money")
+db.fetch("money")
+```
+### output:
+```txt
 500
-/*/
+```
 
+## Delete
+```js
 db.sil("serverStatus")
 db.delete("serverStatus")
-/*/
+```
+### output:
+```txt
+(deleted successfully)
+```
 
-/*/
+## subtract
+```js
+db.cıkar("money", 1)
+db.subtract("money", 1)
+db.substr("money", 1)
+db.sil("serverStatus", 1)
+db.delete("serverStatus", 1)
+db.del("serverStatus", 1)
+```
+### output:
+```txt
+serverStatus = 9
+```
 
-db.cıkar("para", 1)
-db.subtract("para", 1)
-db.substr("para", 1)
-db.sil("serverStatus",1)
-db.delete("serverStatus",1)
-db.del("serverStatus",1)
-/*/
-serverStatus=9
-/*/
-
+## Wipe db
+```js
 db.temizle()
 db.clear()
 db.deleteAll()
 db.clearAll()
-/*/
-
-/*/
-
-db.all()
-/*/
-money=500
-deneme=abc
-bread={1:"not",2:"not",3:"not"}
-/*/
-
-console.log(db.json())//You can convert it to json and use it. If you don't like simplekubitdb, you can convert it to json and use another database. you can use kubitdb https://www.npmjs.com/package/kubitdb 
 ```
-#### Are you using python, come to our [Discord](https://discord.gg/4Xpwwz6pgN) , let's put the python version or
-#### Do you need help why are you waiting go to [Discord](https://discord.gg/4Xpwwz6pgN) 
-## Install SimpleKubitDB
-- ```npm i simplekubitdb```
+### output:
+```txt
+everything wiped 🔥
+```
 
-### For Json Database
-##### KubitDB
-- ```npm i kubitdb```
-##### [How to use KubitDB](https://www.npmjs.com/package/kubitdb) 
+## Fetch everythink
+```js
+db.all()
+console.log(db.json()) // Convert to JSON, integrate with other DBs, or just flex it 🤖
+```
+### output:
+```txt
+money = 500  
+test = abc  
+bread = {1: "not", 2: "not", 3: "not"}
+```
 
-### For Online Database
-##### KubitDBonline
-- ```npm i kubitdbonline```
-##### [How to use KubitDB online](https://www.npmjs.com/package/kubitdbonline) 
+# Developed by kubi ❤️
