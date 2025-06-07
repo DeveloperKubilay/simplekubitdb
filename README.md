@@ -6,7 +6,7 @@
 # 🚀 How to use SimpleKubitDB
 
 ```js
-const { simplekubitdb } = require('simplekubitdb')
+const simplekubitdb = require('simplekubitdb')
 const db = new simplekubitdb("database") // you can change the filename
 // or use: const db = new kubitdb("./database.kubitdb") // if you want that cool extension 😎
 ```
